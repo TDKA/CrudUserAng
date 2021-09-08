@@ -1,0 +1,13 @@
+<h1>List of users: </h1>
+
+<h3 *ngIf="listOfUsers">There are {{listOfUsers.length}} users</h3>
+<mat-list>
+ <mat-list-item *ngFor="let user of listOfUsers">
+    
+<span class="username"> {{user.name}}  </span>| | |
+<a class="btn btn-warning" [routerLink]="['/users/edit', user.id]">Edit</a>   | | |
+<a class="btn btn-danger" [routerLink]="['/users/delete', user.id]">Delete</a>  | | |   
+<a class="btn btn-primary" [routerLink]="['/users/view', user.id]">Show</a>   
+</mat-list-item>
+ 
+</mat-list>
